@@ -1,13 +1,13 @@
 # Site settings ...
-uri: domain.com
-url: https://domain.com
-name: Your name
-title: Mangan Jekyll Theme
-email: example@domain.com
-author: username
-keywords: "Your, Keyword, Here"
-description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione nihil, velit odio quia autem quos. Natus itaque sint, nisi fuga dolorum. Iste ea cumque, aliquam dignissimos vitae labore atque minima?"
-social_username: username
+uri: https://mortuzahossain.github.io/assembly/
+url: https://mortuzahossain.github.io/assembly/
+name: Md Mortuza Hossain
+title: 8086 Assignment
+email: mortuzahossain1997@gmail.com
+author: mortuzahossain
+keywords: "Assignment,asm,project"
+description: "This website contain the solve of first assignment of 8086 microprocessors assignment solve. Use this for practive not to cheat. Try to undustand the code and share if it help you. Wish you good luck. :)"
+social_username: mortuzahossain
 
 # Build settings ...
 sass:
