@@ -13,7 +13,7 @@ social_username: mortuzahossain
 sass:
   style: compressed
 markdown: kramdown
-paginate: 5
+paginate: 20
 permalink: /post/:title
 paginate_path: "assembly/page/:num/"
 exclude:
