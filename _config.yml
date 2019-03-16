@@ -15,7 +15,7 @@ sass:
 markdown: kramdown
 paginate: 5
 permalink: /post/:title
-paginate_path: "https://mortuzahossain.github.io/assembly/page/:num/"
+paginate_path: "assembly/page/:num/"
 exclude:
   - README.md
 
