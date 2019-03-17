@@ -1,60 +1,44 @@
-        .MODEL SMALL
-        .DATA
+.stack 100h
+.model small
+.data
+msg db 0ah,0dh,'$'
+a db ?
+.code 
+main proc
+   mov ax,@data
+   mov ds,ax
+   
+   mov ah,1
+   mov si,0
+   
+   input:
+   int 21h
+   cmp al,0dh
+   je nxt
+   mov a[si],al
+   inc si
+   jmp input
+      
+   nxt:
+   mov a[si],'$'
+   mov ah,9
+   lea dx,msg
+   int 21h
+   
+   mov cx,si
+   sub si,1
+   
+   reverse:
+   mov ah,2
+   mov dl,a[si]
+   int 21h
+   dec si
+   loop reverse
+   
+   end_of:
+   mov ah,4ch
+   int 21h
+   
+main endp
+end main
 
-                MSG  DB  0DH,0AH, ' ENTER THE STRING :-----> :  $'
-                MSG2 DB  0DH,0AH, ' YOUR STRING IS  :-----> :  $'
-                STR1 DB  255 DUP(?)
-                ONE  DB ?
-                TWO  DB ?
-          .CODE
-
-BEGIN:
-          MOV AX,@DATA
-          MOV DS,AX
-
-          LEA DX,MSG
-          MOV AH,09H
-          INT 21H
-
-          LEA SI,STR1
-          MOV AH,01H
-
-READ:
-          INT 21H
-          MOV BL,AL
-
-          CMP AL,0DH
-          JE  DISPLAY
-
-          XOR AL,20H
-          MOV [SI],AL
-          INC SI
-
-          ;CMP BL,0DH
-          JMP READ
-
-
-
-DISPLAY:
-
-          MOV AL,'$'
-          MOV [SI],AL
-
-          LEA DX,MSG2
-          MOV AH,09H
-          INT 21H
-
-
-          LEA DX,STR1
-          MOV AH,09H
-          INT 21H
-
-
-
-         ; MOV AH,4CH
-         ; INT 21H
-          .EXIT
-
-
-
-END BEGIN 
